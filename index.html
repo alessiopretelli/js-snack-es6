@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //(1
+        var found = 0;
+        var biciclette = [
+            {
+                'nome': 'coppini',
+                'peso': 5
+            },
+            {
+                'nome': 'cipollini',
+                'peso': 6
+            },
+            {
+                'nome': 'carbonio',
+                'peso': 3
+            }
+        ];
+
+        for (i = 1; i < biciclette.length; i++) {
+
+                if (biciclette[found]['peso'] > biciclette[i]['peso']) {
+                    found = i;
+                }
+
+        }
+
+       console.log(biciclette[found]);
+
+       //alternativa destructuring e template literal
+
+       var [ , , f] = biciclette;
+       console.log(`La bicicletta piu' leggera e' "${f.nome}" con peso ${f.peso}.`);
+
+        //(2
+
+        var random = () => Math.floor(Math.random() * 10);
+        
+        var data = [];
+        var squadre = [
+            {
+                'nome': 'inter',
+                'punti_fatti': 0,
+                'falli_subiti': 0
+            },
+            {
+                'nome': 'empoli',
+                'punti_fatti': 0,
+                'falli_subiti': 0
+            }
+        ];
+
+        squadre.forEach((element) => {
+            element['punti_fatti'] = random();
+            element['falli_subiti'] = random();
+        });
+
+        console.log(squadre);
+
+        squadre.forEach((element) => {
+            var {nome, punti_fatti} = element;
+            data.push(nome, punti_fatti);
+        });
+
+        console.log(data);
+    </script>
+</body>
+</html>
