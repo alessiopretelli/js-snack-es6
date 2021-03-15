@@ -9,6 +9,7 @@
 <body>
     <script>
         //(1
+
         var found = 0;
         var biciclette = [
             {
@@ -33,13 +34,13 @@
 
         }
 
-       console.log(biciclette[found]);
+       //destructuring e template literal
 
-       //alternativa destructuring e template literal
+       const {nome, peso} = biciclette[found];
+       
+       console.log(`La bicicletta piu' leggera e' "${nome}" con peso ${peso}.`);
 
-       var [ , , f] = biciclette;
-       console.log(`La bicicletta piu' leggera e' "${f.nome}" con peso ${f.peso}.`);
-
+       
         //(2
 
         var random = () => Math.floor(Math.random() * 10);
@@ -65,9 +66,19 @@
 
         console.log(squadre);
 
-        squadre.forEach((element) => {
-            var {nome, punti_fatti} = element;
-            data.push(nome, punti_fatti);
+        //***se inteso letteralmente, come indicato nell'esercizio, come elementi di un array***
+        //squadre.forEach((element) => {
+        //    var {nome, falli_subiti} = element;
+        //    data.push(nome, falli_subiti);
+        //});
+
+        //console.log(data);
+
+        //***se inteso con il salvataggio dei dati come proprieta' di oggetti di un array***
+        squadre.forEach((element, index) => {
+            data.push({});
+            data[index].nome = element.nome;
+            data[index].falli_subiti = element.falli_subiti;
         });
 
         console.log(data);
