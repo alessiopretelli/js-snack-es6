@@ -10,81 +10,115 @@
     <script>
         //(1
 
-        var biciclette = [
-            {
-                'nome': 'coppi',
-                'peso': 5
-            },
-            {
-                'nome': 'carbonio',
-                'peso': 4
-            },
-            {
-                'nome': 'cipollini',
-                'peso': 6
-            }
-        ];
+    //     var biciclette = [
+    //         {
+    //             'nome': 'coppi',
+    //             'peso': 5
+    //         },
+    //         {
+    //             'nome': 'carbonio',
+    //             'peso': 4
+    //         },
+    //         {
+    //             'nome': 'cipollini',
+    //             'peso': 6
+    //         }
+    //     ];
 
-        var found = 0;
+    //     var found = 0;
 
-        for (i = 1; i < biciclette.length; i++) {
+    //     for (i = 1; i < biciclette.length; i++) {
 
-                if (biciclette[found]['peso'] > biciclette[i]['peso']) {
-                    found = i;
+    //             if (biciclette[found]['peso'] > biciclette[i]['peso']) {
+    //                 found = i;
+    //             }
+
+    //     }
+
+    //    var {nome, peso} = biciclette[found]; //destructuring
+       
+    //    console.log(`La bicicletta piu' leggera e' di ${nome} con un peso di ${peso} kg.`); //template literal
+
+       
+    //     //(2
+
+    //     var random = () => Math.floor(Math.random() * 100);
+        
+    //     var data = [];
+    //     var squadre = [
+    //         {
+    //             'nome': 'vitolini',
+    //             'punti_fatti': 0,
+    //             'falli_subiti': 0
+    //         },
+    //         {
+    //             'nome': 'empoli',
+    //             'punti_fatti': 0,
+    //             'falli_subiti': 0
+    //         },
+    //         {
+    //             'nome': 'vinci',
+    //             'punti_fatti': 0,
+    //             'falli_subiti': 0
+    //         }
+    //     ];
+
+    //     squadre.forEach((element) => {
+    //         element['punti_fatti'] = random();
+    //         element['falli_subiti'] = random();
+    //     });
+
+    //     console.log(squadre);
+
+    //     //se inteso letteralmente, come indicato nell'esercizio, come elementi di un array
+    //     //squadre.forEach((element) => {
+    //     //    var {nome, falli_subiti} = element; //destructuring
+    //     //    data.push(nome, falli_subiti);
+    //     //});
+
+    //     //console.log(data);
+
+    //     //se inteso con il salvataggio dei dati come proprieta' di un oggetto di un array
+    //     squadre.forEach((element) => {
+    //         var {nome, falli_subiti} = element; //destructuring
+    //         data.push({nome, falli_subiti});
+    //     });
+
+    //     console.log(data);
+
+
+        //(3
+
+        function between(n, aa, bb) {
+            //foreach
+            // const nn = [];
+
+            // n.forEach((element, index) => {
+                
+            //     if ((index > aa) && (index < bb)) {
+            //         nn.push(element);
+            //     }
+
+            // });
+
+            //filter
+            const nn = n.filter((element, index) => {
+
+                if ((index > aa) && (index < bb)) {
+                    return element;
                 }
 
+            });
+
+
+        return nn;
         }
 
-       const {nome, peso} = biciclette[found]; //destructuring
-       
-       console.log(`La bicicletta piu' leggera e' di ${nome} con un peso di ${peso} kg.`); //template literal
+        var num = [0, 1, 2, 3, 4, 5, 6, 7];
+        var a = 3;
+        var b = 6;
 
-       
-        //(2
-
-        var random = () => Math.floor(Math.random() * 100);
-        
-        var data = [];
-        var squadre = [
-            {
-                'nome': 'vitolini',
-                'punti_fatti': 0,
-                'falli_subiti': 0
-            },
-            {
-                'nome': 'empoli',
-                'punti_fatti': 0,
-                'falli_subiti': 0
-            },
-            {
-                'nome': 'vinci',
-                'punti_fatti': 0,
-                'falli_subiti': 0
-            }
-        ];
-
-        squadre.forEach((element) => {
-            element['punti_fatti'] = random();
-            element['falli_subiti'] = random();
-        });
-
-        console.log(squadre);
-
-        //se inteso letteralmente, come indicato nell'esercizio, come elementi di un array
-        //squadre.forEach((element) => {
-        //    var {nome, falli_subiti} = element; //destructuring
-        //    data.push(nome, falli_subiti);
-        //});
-
-        //console.log(data);
-
-        //se inteso con il salvataggio dei dati come proprieta' di un oggetto di un array
-        squadre.forEach((element) => {
-            var {nome, falli_subiti} = element; //destructuring
-            data.push({nome, falli_subiti});
-        });
-
-        console.log(data);
+        console.log('Array di elementi in posizione "informatica" tra 3(a) e 6(b) esclusi: ' + between(num, a , b));
     </script>
 </body>
 </html>
